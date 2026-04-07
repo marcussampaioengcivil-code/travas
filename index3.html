@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Trava MASS | Segurança Blindada para Portas de Vidro</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&amp;family=Space_Grotesk:wght@300;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#93000a",
+                        "tertiary": "#ffb596",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-lowest": "#0e0e0f",
+                        "primary-container": "#2563eb",
+                        "on-tertiary": "#581e00",
+                        "on-primary-container": "#eeefff",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "secondary": "#c1c7cf",
+                        "surface-dim": "#131314",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#c3c6d7",
+                        "on-primary-fixed": "#00174b",
+                        "on-background": "#e5e2e3",
+                        "on-secondary-fixed": "#161c22",
+                        "on-tertiary-fixed": "#360f00",
+                        "background": "#131314",
+                        "on-secondary-fixed-variant": "#41474e",
+                        "surface-container-high": "#2a2a2b",
+                        "secondary-fixed": "#dde3eb",
+                        "surface-container-highest": "#353436",
+                        "outline-variant": "#434655",
+                        "surface-tint": "#b4c5ff",
+                        "on-surface": "#e5e2e3",
+                        "surface-variant": "#353436",
+                        "surface-container-low": "#1b1b1c",
+                        "primary-fixed": "#dbe1ff",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-primary": "#002a78",
+                        "on-secondary": "#2b3137",
+                        "on-secondary-container": "#afb6bd",
+                        "surface-container": "#1f1f20",
+                        "tertiary-container": "#bc4800",
+                        "on-tertiary-container": "#ffede6",
+                        "tertiary-fixed": "#ffdbcd",
+                        "surface": "#131314",
+                        "inverse-primary": "#0053db",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "secondary-fixed-dim": "#c1c7cf",
+                        "inverse-surface": "#e5e2e3",
+                        "surface-bright": "#39393a",
+                        "primary": "#b4c5ff",
+                        "inverse-on-surface": "#303031",
+                        "secondary-container": "#41474e",
+                        "outline": "#8d90a0"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .industrial-sheen {
+            background: linear-gradient(135deg, #2563eb 0%, rgba(180, 197, 255, 0.15) 100%);
+        }
+
+        .metallic-surface {
+            background: linear-gradient(135deg, #1b1b1c 0%, #2a2a2b 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-zinc-950/60 backdrop-blur-xl shadow-2xl shadow-blue-500/10">
+        <div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+            <a href="#" class="text-xl md:text-2xl font-black tracking-tighter uppercase text-zinc-100 hover:text-white transition-colors font-['Inter']">
+                Trava <span class="text-zinc-400">MASS</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-['Inter'] font-bold tracking-tighter uppercase text-sm"
+                    href="#features">Recursos</a>
+                <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-['Inter'] font-bold tracking-tighter uppercase text-sm"
+                    href="#comparison">Comparativo</a>
+
+                <a class="text-zinc-400 hover:text-zinc-100 transition-colors font-['Inter'] font-bold tracking-tighter uppercase text-sm"
+                    href="#testimonials">Clientes</a>
+            </div>
+            <a href="https://wa.me/5593991568097" target="_blank" rel="noopener noreferrer"
+                class="bg-primary-container text-on-primary-container px-6 py-2 font-['Inter'] font-bold tracking-tighter uppercase scale-95 active:scale-90 transition-all industrial-sheen">Comprar
+                Agora</a>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-black">
+            <!-- Hero Auto Slideshow -->
+            <img class="hero-bg-slide absolute inset-0 w-full h-full object-cover md:object-center opacity-75 transition-opacity duration-[2000ms] ease-in-out"
+                src="./bg-hero.png" alt="Trava MASS instalada" />
+            <img class="hero-bg-slide absolute inset-0 w-full h-full object-cover md:object-center opacity-0 transition-opacity duration-[2000ms] ease-in-out"
+                src="./hero-1.png" alt="Trava MASS destaque 1" />
+            <img class="hero-bg-slide absolute inset-0 w-full h-full object-cover md:object-center opacity-0 transition-opacity duration-[2000ms] ease-in-out"
+                src="./hero-2.png" alt="Trava MASS destaque 2" />
+            <img class="hero-bg-slide absolute inset-0 w-full h-full object-cover md:object-center opacity-0 transition-opacity duration-[2000ms] ease-in-out"
+                src="./hero-3.png" alt="Trava MASS destaque 3" />
+            <img class="hero-bg-slide absolute inset-0 w-full h-full object-cover md:object-center opacity-0 transition-opacity duration-[2000ms] ease-in-out"
+                src="./hero-4.png" alt="Trava MASS destaque 4" />
+
+            <!-- Dark Gradient Fade -->
+            <div
+                class="absolute inset-0 bg-gradient-to-r from-background via-background/90 lg:via-background/20 to-transparent z-10 pointer-events-none">
+            </div>
+        </div>
+        <div class="container mx-auto px-8 z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <span class="font-label text-primary tracking-[0.3em] uppercase text-sm font-bold">Protocolo de
+                    Segurança Ativo</span>
+                <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-none">
+                    O criminoso sempre escolhe o <span class="text-primary">caminho mais fácil.</span>
+                </h1>
+                <p class="text-xl text-on-surface-variant max-w-xl border-l-4 border-primary pl-6">
+                    A Trava MASS tira sua loja dessa escolha. A única trava que dificulta, atrasa e expõe os criminosos.
+                </p>
+                <div class="space-y-4 font-label">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary"
+                            style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        <span class="uppercase tracking-wider text-sm">Instalação Instantânea</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary"
+                            style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        <span class="uppercase tracking-wider text-sm">Zero Furos no Vidro</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-primary"
+                            style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                        <span class="uppercase tracking-wider text-sm">Compatibilidade Universal</span>
+                    </div>
+                </div>
+                <a href="https://wa.me/5593991568097" target="_blank" rel="noopener noreferrer"
+                    class="inline-block text-center bg-primary-container text-on-primary-container px-10 py-5 text-lg font-black uppercase tracking-tighter industrial-sheen hover:brightness-110 transition-all">
+                    Quero proteger minha loja agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Horizontal Carousel -->
+    <section class="py-24 bg-background overflow-hidden relative border-t border-outline-variant/10 z-10">
+        <div class="container mx-auto px-8 mb-12">
+            <div class="text-center md:text-left">
+                <h2 class="text-primary font-label uppercase tracking-[0.2em] mb-4">Design Blindado</h2>
+                <h3 class="text-4xl md:text-5xl font-black uppercase tracking-tighter">Conheça a Trava em Detalhes</h3>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-8 relative">
+            <div id="product-carousel"
+                class="flex overflow-x-auto gap-6 snap-x snap-mandatory pb-12 pt-4 no-scrollbar items-stretch scroll-smooth">
+
+                <!-- Item 1 -->
+                <div onclick="openModal(0)"
+                    class="snap-center shrink-0 w-[85vw] md:w-[calc(25%-1.125rem)] aspect-[3/2] rounded-[2rem] border border-outline-variant/20 overflow-hidden group relative shadow-2xl shadow-black/50 cursor-pointer">
+                    <div
+                        class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10">
+                    </div>
+                    <img src="./produto-1.png"
+                        class="w-full h-full object-cover group-hover:scale-[1.35] transition-transform duration-700"
+                        alt="Trava MASS vista diagonal" />
+                </div>
+
+                <!-- Item 2 -->
+                <div onclick="openModal(1)"
+                    class="snap-center shrink-0 w-[85vw] md:w-[calc(25%-1.125rem)] aspect-[3/2] rounded-[2rem] border border-outline-variant/20 overflow-hidden group relative shadow-2xl shadow-black/50 cursor-pointer">
+                    <div
+                        class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10">
+                    </div>
+                    <img src="./produto-2.png"
+                        class="w-full h-full object-cover group-hover:scale-[1.35] transition-transform duration-700"
+                        alt="Trava MASS vista lateral" />
+                </div>
+
+                <!-- Item 3 -->
+                <div onclick="openModal(2)"
+                    class="snap-center shrink-0 w-[85vw] md:w-[calc(25%-1.125rem)] aspect-[3/2] rounded-[2rem] border border-outline-variant/20 overflow-hidden group relative shadow-2xl shadow-black/50 cursor-pointer">
+                    <div
+                        class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10">
+                    </div>
+                    <img src="./produto-3.png"
+                        class="w-full h-full object-cover group-hover:scale-[1.35] transition-transform duration-700"
+                        alt="Trava MASS detalhe" />
+                </div>
+
+                <!-- Item 4 -->
+                <div onclick="openModal(3)"
+                    class="snap-center shrink-0 w-[85vw] md:w-[calc(25%-1.125rem)] aspect-[3/2] rounded-[2rem] border border-outline-variant/20 overflow-hidden group relative shadow-2xl shadow-black/50 cursor-pointer">
+                    <div
+                        class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10">
+                    </div>
+                    <img src="./produto-4.png"
+                        class="w-full h-full object-cover group-hover:scale-[1.35] transition-transform duration-700"
+                        alt="Trava MASS perspectiva" />
+                </div>
+
+                <!-- Item 5 -->
+                <div onclick="openModal(4)"
+                    class="snap-center shrink-0 w-[85vw] md:w-[calc(25%-1.125rem)] aspect-[3/2] rounded-[2rem] border border-outline-variant/20 overflow-hidden group relative shadow-2xl shadow-black/50 cursor-pointer">
+                    <div
+                        class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10">
+                    </div>
+                    <img src="./produto-5.png"
+                        class="w-full h-full object-cover group-hover:scale-[1.35] transition-transform duration-700"
+                        alt="Trava MASS ângulo especial" />
+                </div>
+            </div>
+
+            <!-- Scrolling Controls (Desktop) -->
+            <div class="hidden md:flex justify-center gap-4 mt-6">
+                <button aria-label="Anterior"
+                    class="w-14 h-14 rounded-full border border-outline-variant/30 bg-surface-container-high flex items-center justify-center hover:bg-surface-container-lowest transition-colors active:scale-95 group"
+                    onclick="document.getElementById('product-carousel').scrollBy({left: -400, behavior: 'smooth'})">
+                    <span
+                        class="material-symbols-outlined text-zinc-400 group-hover:text-primary transition-colors">chevron_left</span>
+                </button>
+                <button aria-label="Próximo"
+                    class="w-14 h-14 rounded-full border border-outline-variant/30 bg-surface-container-high flex items-center justify-center hover:bg-surface-container-lowest transition-colors active:scale-95 group industrial-sheen"
+                    onclick="document.getElementById('product-carousel').scrollBy({left: 400, behavior: 'smooth'})">
+                    <span class="material-symbols-outlined text-white transition-colors">chevron_right</span>
+                </button>
+            </div>
+
+            <!-- Mobile Swipe Indicator & Controls -->
+            <div class="flex md:hidden justify-between items-center mt-4">
+                <button
+                    class="w-12 h-12 rounded-full border border-outline-variant/30 bg-surface-container-high flex items-center justify-center active:scale-95"
+                    onclick="document.getElementById('product-carousel').scrollBy({left: -300, behavior: 'smooth'})">
+                    <span class="material-symbols-outlined text-zinc-400">chevron_left</span>
+                </button>
+                <div
+                    class="flex items-center gap-2 text-zinc-500 font-label text-xs uppercase tracking-[0.2em] animate-pulse">
+                    <span class="material-symbols-outlined text-sm">swipe</span>
+                    <span>Explorar</span>
+                </div>
+                <button
+                    class="w-12 h-12 rounded-full border border-primary/50 industrial-sheen flex items-center justify-center active:scale-95"
+                    onclick="document.getElementById('product-carousel').scrollBy({left: 300, behavior: 'smooth'})">
+                    <span class="material-symbols-outlined text-white">chevron_right</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Problem Section -->
+    <section class="py-32 bg-surface-container-low">
+        <div class="container mx-auto px-8">
+            <div class="grid lg:grid-cols-2 gap-24 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="bg-surface-container-high p-8 border-b-4 border-error">
+                        <h2 class="font-label text-error uppercase tracking-widest text-xs mb-4">Vulnerabilidade
+                            Detectada</h2>
+                        <h3 class="text-4xl font-black uppercase tracking-tighter mb-6">Seu vidro é o alvo mais fácil.
+                        </h3>
+                        <p class="text-on-surface-variant mb-8 leading-relaxed">
+                            Criminosos buscam silêncio e velocidade. Portas de correr de vidro sem proteção adicional
+                            são abertas em segundos com ferramentas simples. Se a entrada for silenciosa, sua loja se
+                            torna a escolha óbvia.
+                        </p>
+                        <blockquote
+                            class="text-2xl font-black italic text-on-surface border-l-4 border-primary pl-6 py-2">
+                            "Se for fácil, ele entra. Se for difícil, ele desiste."
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 space-y-4">
+                    <div class="aspect-video bg-surface-container-highest overflow-hidden">
+                        <img alt="Surveillance camera footage aesthetic showing a dark storefront at night, grainy texture with high contrast shadows"
+                            class="w-full h-full object-cover grayscale opacity-50"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBw94LPEDjWgHc_BxjruZPcOs7hxsHMw1W_1TAaq9Fr0x1_CaRuttUnio6S1lTV0KagnReo0H0JXtRtDZODgOqaDTNnuCKluLdV8YlL7eFaTZStCRVmNSjIYLDpqZ5FJITa6GzflMrgXmqzQuTWJGWt0rrKjllPcILa_504yS5VC2FrWDNTRzj6C5v6a3FVdYNB0rVt2vk3vkbQFWMQE6hqWfpQ53lOKFiDat4nvL5q541yJIqq9maDKl84ZHqP5V6lrpNwvGktfIFd" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Solution / Product Detail (Bento Grid) -->
+    <section class="py-32 bg-background" id="features">
+        <div class="container mx-auto px-8">
+            <div class="mb-16">
+                <h2 class="text-primary font-label uppercase tracking-[0.2em] mb-4">A Solução Definitiva</h2>
+                <h3 class="text-5xl font-black uppercase tracking-tighter">Engenharia de Resistência Bruta</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
+                <!-- Plate 1 -->
+                <div class="md:col-span-2 bg-surface-container-low p-12 flex flex-col justify-between min-h-[400px]">
+                    <div>
+                        <h4 class="text-3xl font-black uppercase mb-4">Ferro Maciço Revestido</h4>
+                        <p class="text-on-surface-variant max-w-md">Construída em metal de alta densidade com
+                            revestimento plástico especial para garantir proteção sem riscar o vidro da sua fachada.</p>
+                    </div>
+                    <div class="flex gap-4 mt-8">
+                        <span
+                            class="font-label text-xs bg-primary-container/20 text-primary px-4 py-1 uppercase font-bold">Ultra
+                            Resistente</span>
+                        <span
+                            class="font-label text-xs bg-primary-container/20 text-primary px-4 py-1 uppercase font-bold">Anti-Risco</span>
+                    </div>
+                </div>
+                <!-- Plate 2 -->
+                <div
+                    class="bg-surface-container-high p-12 flex flex-col justify-center border-l border-outline-variant/10">
+                    <span class="material-symbols-outlined text-primary text-5xl mb-6"
+                        style="font-variation-settings: 'FILL' 1;">security</span>
+                    <h4 class="text-2xl font-black uppercase mb-4">Cápsula de Blindagem</h4>
+                    <p class="text-on-surface-variant text-sm">Uma cúpula metálica que protege integralmente o cadeado,
+                        impedindo o uso de alicates de corte ou serras.</p>
+                </div>
+                <!-- Plate 3 -->
+                <div class="bg-surface-container-high p-12 border-t border-outline-variant/10">
+                    <h4 class="text-2xl font-black uppercase mb-4">Bloqueio Ativo</h4>
+                    <p class="text-on-surface-variant text-sm">Impede mecanicamente o deslocamento das folhas de vidro,
+                        forçando o criminoso a fazer barulho extremo se quiser entrar.</p>
+                </div>
+                <!-- Plate 4 -->
+                <div
+                    class="md:col-span-2 bg-surface-container-low p-12 flex flex-col justify-center border-t border-outline-variant/10">
+                    <span class="material-symbols-outlined text-primary text-5xl mb-6"
+                        style="font-variation-settings: 'FILL' 1;">timer</span>
+                    <h4 class="text-3xl font-black uppercase mb-4">Instalação em 10 Segundos</h4>
+                    <p class="text-on-surface-variant text-lg max-w-3xl">Sem parafusos, sem furos, sem complicações.
+                        Encaixe, tranque
+                        e saia com a certeza de que seu patrimônio está seguro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Value Comparison -->
+    <section class="py-32 bg-surface-container-lowest" id="comparison">
+        <div class="container mx-auto px-8">
+            <div class="w-full mx-auto text-center mb-16 px-4 xl:px-16">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter mb-8 leading-tight">
+                    O que vale mais: <span class="text-primary">ALGUNS REAIS</span> ou seu estoque de <span
+                        class="text-error">R$100.000?</span>
+                </h2>
+                <p class="text-on-surface-variant text-lg leading-relaxed w-full">A segurança não é um mero custo
+                    operacional, é a muralha que garante a proteção da sua continuidade. Um único evento de invasão no
+                    meio da madrugada não leva apenas os seus produtos e o seu lucro — leva junto a sua paz de espírito,
+                    mancha a confiança dos seus clientes e destrói meses de trabalho. Investir apenas alguns reais em
+                    uma solução de eficiência comprovada e instalação instantânea é a decisão tática mais inteligente
+                    para anular um prejuízo incalculável antes mesmo que ele aconteça.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-1 bg-outline-variant/20">
+                <div class="bg-surface-container-low p-12 text-center">
+                    <h4 class="font-label text-zinc-500 uppercase tracking-widest mb-6">Sem Trava MASS</h4>
+                    <ul class="space-y-4 text-sm uppercase font-bold tracking-tight">
+                        <li class="flex items-center justify-center gap-2 text-error"><span
+                                class="material-symbols-outlined">close</span> Porta Vulnerável</li>
+                        <li class="flex items-center justify-center gap-2 text-error"><span
+                                class="material-symbols-outlined">close</span> Estoque Saqueado</li>
+                        <li class="flex items-center justify-center gap-2 text-error"><span
+                                class="material-symbols-outlined">close</span> Noites em Claro</li>
+                        <li class="flex items-center justify-center gap-2 text-error"><span
+                                class="material-symbols-outlined">close</span> Prejuízo Incalculável</li>
+                    </ul>
+                </div>
+                <div class="bg-surface-container-high p-12 text-center industrial-sheen">
+                    <h4 class="font-label text-on-primary-container uppercase tracking-widest mb-6">Com Trava MASS</h4>
+                    <ul class="space-y-4 text-sm uppercase font-bold tracking-tight">
+                        <li class="flex items-center justify-center gap-2 text-on-primary-container"><span
+                                class="material-symbols-outlined">check</span> Barreira Física Reforçada</li>
+                        <li class="flex items-center justify-center gap-2 text-on-primary-container"><span
+                                class="material-symbols-outlined">check</span> Intruso Desiste pelo Risco</li>
+                        <li class="flex items-center justify-center gap-2 text-on-primary-container"><span
+                                class="material-symbols-outlined">check</span> Sono Tranquilo</li>
+                        <li class="flex items-center justify-center gap-2 text-on-primary-container"><span
+                                class="material-symbols-outlined">check</span> Investimento de Proteção Único</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Social Proof -->
+    <section class="py-32 bg-background" id="testimonials">
+        <div class="container mx-auto px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+                <div>
+                    <h2 class="text-primary font-label uppercase tracking-[0.2em] mb-4">Validação Real</h2>
+                    <h3 class="text-5xl font-black uppercase tracking-tighter">Lojas em Santarém que confiam</h3>
+                </div>
+                <div class="text-right">
+                    <div class="text-5xl font-black text-primary tracking-tighter">100%</div>
+                    <div class="font-label uppercase text-xs tracking-widest">Satisfação dos Lojistas</div>
+                </div>
+            </div>
+            <!-- Logos Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+                <!-- Cliente 1 -->
+                <div class="bg-surface-container-low border border-outline-variant/10 rounded-2xl flex items-center justify-center p-6 aspect-[3/2] group hover:border-primary/50 hover:bg-surface-container-high transition-all">
+                    <img src="./clientes/logo Pheminina.png" alt="Cliente Pheminina" class="max-w-full max-h-full object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" />
+                </div>
+                <!-- Cliente 2 -->
+                <div class="bg-surface-container-low border border-outline-variant/10 rounded-2xl flex items-center justify-center p-6 aspect-[3/2] group hover:border-primary/50 hover:bg-surface-container-high transition-all">
+                    <img src="./clientes/logo acvariedades.png" alt="Cliente AC Variedades" class="max-w-full max-h-full object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" />
+                </div>
+                <!-- Cliente 3 -->
+                <div class="bg-surface-container-low border border-outline-variant/10 rounded-2xl flex items-center justify-center p-6 aspect-[3/2] group hover:border-primary/50 hover:bg-surface-container-high transition-all">
+                    <img src="./clientes/logo atacadão suplementos.png" alt="Cliente Atacadão Suplementos" class="max-w-full max-h-full object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" />
+                </div>
+                <!-- Cliente 4 -->
+                <div class="bg-surface-container-low border border-outline-variant/10 rounded-2xl flex items-center justify-center p-6 aspect-[3/2] group hover:border-primary/50 hover:bg-surface-container-high transition-all">
+                    <img src="./clientes/logo farmelhor.png" alt="Cliente FarMelhor" class="max-w-full max-h-full object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" />
+                </div>
+                <!-- Cliente 5 -->
+                <div class="bg-surface-container-low border border-outline-variant/10 rounded-2xl flex items-center justify-center p-6 aspect-[3/2] group hover:border-primary/50 hover:bg-surface-container-high transition-all">
+                    <img src="./clientes/logo glauber travassos.png" alt="Cliente Glauber Travassos" class="max-w-full max-h-full object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" />
+                </div>
+                <!-- Cliente 6 -->
+                <div class="bg-surface-container-low border border-outline-variant/10 rounded-2xl flex items-center justify-center p-6 aspect-[3/2] group hover:border-primary/50 hover:bg-surface-container-high transition-all">
+                    <img src="./clientes/logo mandame chica.png" alt="Cliente Madame Chica" class="max-w-full max-h-full object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" />
+                </div>
+                <!-- Cliente 7 -->
+                <div class="bg-surface-container-low border border-outline-variant/10 rounded-2xl flex items-center justify-center p-6 aspect-[3/2] group hover:border-primary/50 hover:bg-surface-container-high transition-all">
+                    <img src="./clientes/logo massabor.png" alt="Cliente Massabor" class="max-w-full max-h-full object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" />
+                </div>
+                <!-- Cliente 8 -->
+                <div class="bg-surface-container-low border border-outline-variant/10 rounded-2xl flex items-center justify-center p-6 aspect-[3/2] group hover:border-primary/50 hover:bg-surface-container-high transition-all">
+                    <img src="./clientes/logo mundo verde.png" alt="Cliente Mundo Verde" class="max-w-full max-h-full object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" />
+                </div>
+                <!-- Cliente 9 -->
+                <div class="bg-surface-container-low border border-outline-variant/10 rounded-2xl flex items-center justify-center p-6 aspect-[3/2] group hover:border-primary/50 hover:bg-surface-container-high transition-all">
+                    <img src="./clientes/logo qualiv.png" alt="Cliente Qualiv" class="max-w-full max-h-full object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" />
+                </div>
+                <!-- Cliente 10 -->
+                <div class="bg-surface-container-low border border-outline-variant/10 rounded-2xl flex items-center justify-center p-6 aspect-[3/2] group hover:border-primary/50 hover:bg-surface-container-high transition-all">
+                    <img src="./clientes/logo tapajos eletricos.png" alt="Cliente Tapajós Elétricos" class="max-w-full max-h-full object-contain opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Usage & FAQ -->
+    <section class="py-32 bg-surface-container-low">
+        <div class="container mx-auto px-8">
+            <div class="grid lg:grid-cols-2 gap-24">
+                <div>
+                    <h2 class="text-4xl font-black uppercase mb-12">Manutenção e Uso</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <span class="text-4xl font-black text-outline-variant font-label">01</span>
+                            <div>
+                                <h4 class="text-xl font-bold uppercase mb-2">Encaixe</h4>
+                                <p class="text-on-surface-variant">Posicione a trava sobre os puxadores ou trilhos da
+                                    porta de correr.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <span class="text-4xl font-black text-outline-variant font-label">02</span>
+                            <div>
+                                <h4 class="text-xl font-bold uppercase mb-2">Trancamento</h4>
+                                <p class="text-on-surface-variant">Insira o cadeado dentro da cápsula protetora e feche.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <span class="text-4xl font-black text-outline-variant font-label">03</span>
+                            <div>
+                                <h4 class="text-xl font-bold uppercase mb-2">Cuidado</h4>
+                                <p class="text-on-surface-variant">Limpeza simples sem necessidade de lubrificação recorrente.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-black uppercase mb-12">FAQ</h2>
+                    <div class="space-y-6">
+                        <details class="group bg-surface-container-high p-6">
+                            <summary
+                                class="flex justify-between items-center cursor-pointer font-bold uppercase tracking-tight">
+                                E se eles quebrarem o vidro?
+                                <span
+                                    class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <p class="mt-4 text-on-surface-variant text-sm">Quebrar vidro temperado faz um barulho
+                                ensurdecedor que atrai atenção imediata. O criminoso prefere abrir a porta
+                                silenciosamente. A trava elimina a opção silenciosa.</p>
+                        </details>
+                        <details class="group bg-surface-container-high p-6">
+                            <summary
+                                class="flex justify-between items-center cursor-pointer font-bold uppercase tracking-tight">
+                                É difícil de remover de manhã?
+                                <span
+                                    class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <p class="mt-4 text-on-surface-variant text-sm">Não. Com a chave certa, a remoção leva menos
+                                de 5 segundos. É tão simples quanto abrir qualquer cadeado comum.</p>
+                        </details>
+                        <details class="group bg-surface-container-high p-6">
+                            <summary
+                                class="flex justify-between items-center cursor-pointer font-bold uppercase tracking-tight">
+                                Serve para qualquer porta?
+                                <span
+                                    class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+                            </summary>
+                            <p class="mt-4 text-on-surface-variant text-sm">A Trava MASS foi desenhada para a maioria
+                                dos padrões de portas de correr comerciais. Consulte nossa equipe para confirmar as
+                                medidas do seu puxador.</p>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Comparison & Final Decision Section -->
+    <section class="py-32 bg-background border-t border-primary/10">
+        <div class="container mx-auto px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-primary font-label uppercase tracking-[0.2em] mb-4">O Protocolo de Decisão</h2>
+                <h3 class="text-5xl md:text-6xl font-black uppercase tracking-tighter">A Decisão Inteligente para seu
+                    Patrimônio</h3>
+            </div>
+            <div
+                class="max-w-5xl mx-auto overflow-hidden border border-outline-variant/30 bg-surface-container-low mb-20 shadow-2xl">
+                <div class="grid grid-cols-3 bg-surface-container-high border-b border-outline-variant/30">
+                    <div class="p-6 font-label uppercase text-xs tracking-widest text-zinc-500">Critério de Segurança
+                    </div>
+                    <div
+                        class="p-6 font-label uppercase text-xs tracking-widest text-zinc-500 border-x border-outline-variant/30">
+                        Porta Comum</div>
+                    <div class="p-6 font-label uppercase text-xs tracking-widest text-primary font-bold bg-primary/5">
+                        Com Trava MASS</div>
+                </div>
+                <div class="grid grid-cols-3 border-b border-outline-variant/20">
+                    <div class="p-6 font-bold uppercase text-sm tracking-tight flex items-center">Perfil do Alvo</div>
+                    <div class="p-6 text-error text-sm uppercase font-bold flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm">warning</span> Alvo Fácil
+                    </div>
+                    <div
+                        class="p-6 text-primary text-sm uppercase font-bold bg-primary/5 flex items-center gap-2 border-l border-outline-variant/20">
+                        <span class="material-symbols-outlined text-sm">shield</span> Alto Risco Criminal
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 border-b border-outline-variant/20">
+                    <div class="p-6 font-bold uppercase text-sm tracking-tight flex items-center">Tempo de Invasão</div>
+                    <div class="p-6 text-zinc-400 text-sm uppercase flex items-center">~15 Segundos</div>
+                    <div
+                        class="p-6 text-primary text-sm uppercase font-bold bg-primary/5 flex items-center border-l border-outline-variant/20">
+                        Tentativa Exposta</div>
+                </div>
+                <div class="grid grid-cols-3 border-b border-outline-variant/20">
+                    <div class="p-6 font-bold uppercase text-sm tracking-tight flex items-center">Ruído Gerado</div>
+                    <div class="p-6 text-zinc-400 text-sm uppercase flex items-center">Silencioso (Zero Alerta)</div>
+                    <div
+                        class="p-6 text-primary text-sm uppercase font-bold bg-primary/5 flex items-center border-l border-outline-variant/20">
+                        Extremo (Alerta Vizinhos)</div>
+                </div>
+                <div class="grid grid-cols-3 border-b border-outline-variant/20">
+                    <div class="p-6 font-bold uppercase text-sm tracking-tight flex items-center">Proteção do Cadeado
+                    </div>
+                    <div class="p-6 text-zinc-400 text-sm uppercase flex items-center">Exposto (Corte Fácil)</div>
+                    <div
+                        class="p-6 text-primary text-sm uppercase font-bold bg-primary/5 flex items-center border-l border-outline-variant/20">
+                        Blindagem de Aço 360º</div>
+                </div>
+                <div class="grid grid-cols-3">
+                    <div class="p-6 font-bold uppercase text-sm tracking-tight flex items-center">Sua Tranquilidade
+                    </div>
+                    <div class="p-6 text-error text-sm uppercase font-bold flex items-center">Ansiedade Constante</div>
+                    <div
+                        class="p-6 text-primary text-sm uppercase font-bold bg-primary/5 flex items-center border-l border-outline-variant/20">
+                        Absoluta Certeza</div>
+                </div>
+            </div>
+            <div class="max-w-3xl mx-auto text-center space-y-8">
+                <div class="inline-flex items-center gap-4 bg-error-container/20 border border-error/30 px-6 py-3">
+                    <span class="relative flex h-3 w-3">
+                        <span
+                            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-error opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-error"></span>
+                    </span>
+                    <span class="font-label uppercase text-sm tracking-[0.2em] font-black text-error">ALERTA: Apenas 14
+                        unidades restantes para pronta entrega</span>
+                </div>
+                <h4 class="text-3xl font-black uppercase tracking-tight leading-tight">
+                    Não espere o primeiro prejuízo para agir. <br />A segurança do seu negócio não pode ser adiada.
+                </h4>
+                <div class="pt-8">
+                    <a href="https://wa.me/5593991568097" target="_blank" rel="noopener noreferrer"
+                        class="inline-block text-center group relative w-full sm:w-auto bg-primary-container text-on-primary-container px-16 py-8 text-2xl font-black uppercase tracking-tighter industrial-sheen hover:scale-105 transition-all overflow-hidden">
+                        <span class="relative z-10 flex items-center justify-center gap-3">
+                            GARANTIR MINHA SEGURANÇA AGORA
+                            <span class="material-symbols-outlined font-black">arrow_forward</span>
+                        </span>
+                        <div
+                            class="absolute inset-0 bg-white/10 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-[-20deg]">
+                        </div>
+                    </a>
+                    <p class="mt-6 font-label text-zinc-500 uppercase text-xs tracking-widest">
+                        * Instalação garantida em Santarém-PA em até 24h úteis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Final CTA (Legacy Version preserved as a fallback/footer bridge) -->
+    <section class="py-32 bg-surface-container-low relative overflow-hidden">
+        <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50">
+        </div>
+        <div class="container mx-auto px-8 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-none">
+                    Proteja sua loja hoje. <br />
+                    <span class="text-primary">Evite prejuízos amanhã.</span>
+                </h2>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/5593991568097" target="_blank" rel="noopener noreferrer"
+                        class="inline-block text-center bg-surface-container-highest text-on-surface px-12 py-6 text-xl font-black uppercase tracking-tighter hover:brightness-125 transition-all">
+                        Falar com Especialista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-zinc-950 border-t border-zinc-800">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-12 py-16 w-full">
+            <div class="space-y-6">
+                <div class="text-2xl font-black tracking-tighter uppercase text-zinc-100 font-['Inter']">
+                    Trava <span class="text-zinc-500">MASS</span>
+                </div>
+                <p class="text-zinc-500 max-w-sm font-label text-xs tracking-widest uppercase">
+                    © DESDE 2017 TRAVA SECURITY SYSTEMS. PROJETADA PARA CERTEZA ABSOLUTA.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h5 class="text-blue-500 font-label text-xs tracking-widest uppercase font-bold">Atendimento</h5>
+                    <nav class="flex flex-col gap-3">
+                        <a class="flex items-center gap-2 text-zinc-500 hover:text-[#25D366] transition-colors font-label text-xs uppercase font-bold"
+                            href="https://wa.me/5593991568097" target="_blank" rel="noopener noreferrer">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                            </svg>
+                            (93) 9 9156-8097
+                        </a>
+                        <div class="flex items-center gap-2 text-zinc-500 font-label text-xs uppercase font-bold">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Seg. à Sáb.: 8:00h às 17h
+                        </div>
+                    </nav>
+                </div>
+                <div class="space-y-4">
+                    <h5 class="text-blue-500 font-label text-xs tracking-widest uppercase font-bold">Endereço</h5>
+                    <nav class="flex flex-col gap-3">
+                        <div class="flex items-start gap-2 text-zinc-500 font-label text-xs uppercase font-bold leading-relaxed max-w-[250px]">
+                            <svg class="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>Av. Ismael Araujo, 578 - Santissímo, Santarém/Pa - 68010-600</span>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Gallery Modal -->
+    <div id="image-modal"
+        class="fixed inset-0 z-[100] hidden items-center justify-center bg-zinc-950/80 backdrop-blur-md opacity-0 transition-opacity duration-300"
+        onclick="closeModal()">
+        <!-- Close -->
+        <button onclick="closeModal()"
+            class="absolute top-6 right-6 text-zinc-400 hover:text-white hover:bg-white/10 w-12 h-12 rounded-full flex items-center justify-center transition-all z-50">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+
+        <!-- Controls -->
+        <button onclick="prevImage(event)"
+            class="absolute left-4 md:left-12 text-zinc-300 hover:text-primary transition-all bg-surface-container-high border border-outline-variant/30 hover:border-primary/50 shadow-2xl p-4 md:p-5 rounded-full z-50 hover:scale-110 active:scale-95 group">
+            <span
+                class="material-symbols-outlined text-3xl transition-transform group-hover:-translate-x-1">chevron_left</span>
+        </button>
+        <button onclick="nextImage(event)"
+            class="absolute right-4 md:right-12 text-zinc-300 hover:text-primary transition-all bg-surface-container-high border border-outline-variant/30 hover:border-primary/50 shadow-2xl p-4 md:p-5 rounded-full z-50 hover:scale-110 active:scale-95 group">
+            <span
+                class="material-symbols-outlined text-3xl transition-transform group-hover:translate-x-1">chevron_right</span>
+        </button>
+
+        <!-- Image -->
+        <div class="relative w-full max-w-5xl max-h-[75vh] px-12 md:px-24 flex justify-center items-center"
+            onclick="event.stopPropagation()">
+            <!-- Subtle glow behind the image -->
+            <div class="absolute inset-0 bg-primary/20 blur-3xl rounded-full opacity-50 scale-75 pointer-events-none">
+            </div>
+            <!-- Styled Image Container -->
+            <img id="modal-image" src=""
+                class="relative max-w-full max-h-[65vh] md:max-h-[70vh] object-contain rounded-[2rem] border border-outline-variant/40 bg-surface-container-lowest p-2 md:p-4 shadow-2xl shadow-black transition-transform duration-300"
+                alt="Zoom view" />
+        </div>
+    </div>
+
+    <script>
+        // Modal State
+        const modalImages = [
+            './produto-1.png',
+            './produto-2.png',
+            './produto-3.png',
+            './produto-4.png',
+            './produto-5.png'
+        ];
+        let currentModalIndex = 0;
+        let isModalOpen = false;
+
+        window.openModal = function (index) {
+            currentModalIndex = index;
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-image');
+
+            modalImg.src = modalImages[currentModalIndex];
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            // Timeout to allow display:flex to apply before transition
+            setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
+
+            isModalOpen = true;
+        };
+
+        window.closeModal = function () {
+            const modal = document.getElementById('image-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.remove('flex');
+                modal.classList.add('hidden');
+            }, 300); // Matches duration-300
+
+            isModalOpen = false;
+        };
+
+        window.nextImage = function (e) {
+            if (e) e.stopPropagation();
+            currentModalIndex = (currentModalIndex + 1) % modalImages.length;
+            document.getElementById('modal-image').src = modalImages[currentModalIndex];
+        };
+
+        window.prevImage = function (e) {
+            if (e) e.stopPropagation();
+            currentModalIndex = (currentModalIndex - 1 + modalImages.length) % modalImages.length;
+            document.getElementById('modal-image').src = modalImages[currentModalIndex];
+        };
+
+        // Keyboard navigation for modal
+        document.addEventListener('keydown', (e) => {
+            if (!isModalOpen) return;
+            if (e.key === 'Escape') closeModal();
+            if (e.key === 'ArrowRight') nextImage(null);
+            if (e.key === 'ArrowLeft') prevImage(null);
+        });
+
+        // Carousel Auto-scroll Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.getElementById('product-carousel');
+            if (!carousel) return;
+
+            let isHovered = false;
+
+            setInterval(() => {
+                if (!isHovered && !isModalOpen) {
+                    // Se chegou no final do scroll
+                    if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 20) {
+                        carousel.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        // Avança o suficiente para o próximo snap agir
+                        carousel.scrollBy({ left: 350, behavior: 'smooth' });
+                    }
+                }
+            }, 3000); // Roda a cada 3 segundos
+
+            // Pausar ao passar o mouse ou tocar (mobile)
+            carousel.addEventListener('mouseenter', () => isHovered = true);
+            carousel.addEventListener('mouseleave', () => isHovered = false);
+
+            carousel.addEventListener('touchstart', () => isHovered = true, { passive: true });
+            carousel.addEventListener('touchend', () => {
+                // Segura a pausa por 2 segundos após tirar o dedo
+                setTimeout(() => isHovered = false, 2000);
+            }, { passive: true });
+        });
+        // Hero Background Slideshow Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.hero-bg-slide');
+            if (slides.length <= 1) return;
+
+            let currentSlide = 0;
+
+            setInterval(() => {
+                // Fade out current image
+                slides[currentSlide].classList.remove('opacity-75');
+                slides[currentSlide].classList.add('opacity-0');
+
+                // Move to next index
+                currentSlide = (currentSlide + 1) % slides.length;
+
+                // Fade in next image
+                slides[currentSlide].classList.remove('opacity-0');
+                slides[currentSlide].classList.add('opacity-75');
+            }, 6000); // Crossfade every 6 seconds
+        });
+    </script>
+</body>
+
+</html>
